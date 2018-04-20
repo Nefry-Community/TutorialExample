@@ -12,14 +12,11 @@ void loop() {
   if (Nefry.readSW()) {
     // LEDが赤に光る
     Nefry.setLed(255, 0, 0);
-    // ボタンを押した時は10という値を知らせる
-    Serial.println(10);
+    // ボタンを押した時はランダム値を知らせる
+    Serial.println(random(0,100));
     // 押されたら1秒待つ
     Nefry.ndelay(1000);
     // 青に戻る
     Nefry.setLed(0, 0, 255);
   }
-
-  // 通常時は0を知らせ続ける
-  Serial.println(0);
 }
